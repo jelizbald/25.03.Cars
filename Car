@@ -1,1 +1,89 @@
+package com.company;
+
+public class Car
+{
+    private static int number_of_cars = 0;
+    private String type;
+    private int lenght;
+    private String color;
+
+    private static String[] default_type = {"LADA","MINI COUPER"};
+    private static String[] default_color = {"GOLD", "PINK"};
+    private static int [] default_length = {400,600};
+
+    public Car()
+    {
+        number_of_cars = number_of_cars + 1;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public Car(String type1, String color1, int length1)
+    {
+        number_of_cars = number_of_cars + 1;
+        setType(type1);
+        setColor(color1);
+        setLenght(length1);
+    }
+
+    public Car(boolean b)
+    {
+        if(b) //true
+        {
+            setType(default_type[1]);
+            setColor(default_color[1]);
+            setLenght(default_length[1]);
+        }
+        else //false
+        {
+            setType(default_type[0]);
+            setColor(default_color[0]);
+            setLenght(default_length[0]);
+        }
+    }
+
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+
+    public int getLenght()
+    {
+        return lenght;
+    }
+
+    public void setLenght(int lenght)
+    {
+        this.lenght = lenght;
+    }
+
+    public String getColor()
+    {
+        return color;
+    }
+
+    public void setColor(String color)
+    {
+        this.color = color;
+    }
+
+    public void print()
+    {
+        String result = "This car has type: " + getType() + ", lenght: " + getLenght() + ", color: " + getColor();
+        System.out.println(result);
+    }
+
+    public static void beep()
+    {
+        System.out.println("BEEEP!");
+    }
+
+    public static int getNumber_of_cars()
+    {
+        return number_of_cars;
+    }
+}
 
